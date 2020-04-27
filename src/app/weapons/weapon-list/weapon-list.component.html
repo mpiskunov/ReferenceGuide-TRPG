@@ -1,1 +1,32 @@
-<p>weapon-list works!</p>
+<div class='card'>
+    <div class='card-header'>
+        All Weapons
+    </div>
+    <div class='card-body'> 
+      <div class='table-responsive'>
+        <table class='table'
+               *ngIf='weapons && weapons.length'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Accuracy</th>
+              <th>Damage</th>
+              <th>Rel.</th>
+              <th>Type</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let wep of weapons'>
+              <td>{{ wep.name }}</td>
+              <td>{{ wep.weaponAccuracy }}</td>
+              <td>{{ wep.damage}}</td>
+              <td>{{ wep.defaultReliability }}</td>
+              <td>{{ wep.attackType }}</td>
+              <td>{{ wep.cost }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
