@@ -17,8 +17,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor='let wep of weapons'>
-              <td>{{ wep.name }}</td>
+            <tr *ngFor='let wep of filteredWeapons'>
+              <td style="width: 25%"> <a [routerLink]="['/weapons', wep.id]">{{ wep.name }}</a></td>
               <td>{{ wep.weaponAccuracy }}</td>
               <td>{{ wep.damage}}</td>
               <td>{{ wep.defaultReliability }}</td>
@@ -27,6 +27,13 @@
             </tr>
           </tbody>
         </table>
+        <nav aria-label="Page navigation for Weapons">
+          <ul class="pagination justify-content-center">
+            <li *ngFor='let num of counter(numberOfPages); let i = index;'class="page-item {{i+1 == activePage ? 'active' : ''}}" (click)='updateFilterList($event)'>
+              <p class='page-link'>{{i+1}}</p>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

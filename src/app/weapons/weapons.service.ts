@@ -5,7 +5,9 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { ServiceClass } from '../interfaces/service.interface';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class WeaponService extends ServiceClass {
 
     constructor(private http: HttpClient, private url: Constants) {
