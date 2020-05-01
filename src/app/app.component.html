@@ -1,4 +1,4 @@
-<nav class='navbar navbar-expand navbar-light bg-light'>
+<nav class='navbar navbar-expand navbar-light bg-light pb-2'>
   <a class='navbar-brand'>{{title}}</a>
   <ul class='nav nav-pills'>
     <li><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">Home</a></li>
@@ -7,6 +7,6 @@
     <li><a class='nav-link' routerLinkActive='active' >Items</a></li>
   </ul>
 </nav>
-<div class='container'>
+<div class='container pt-5'>
 <router-outlet></router-outlet>
 </div>

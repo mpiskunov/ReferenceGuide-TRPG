@@ -1,8 +1,23 @@
 <div class='card'>
     <div class='card-header'>
-        All Weapons
+      <nav class="navbar navbar-light bg-light">
+        
+      </nav>
+        <nav aria-label="Number of Weapons on page">
+            <button class="btn btn-sm btn-outline-secondary {{sortAlphabetically ? 'active' : ''}}" (click)='sortWeaponsAlphabeticallyClicked(!sortAlphabetically)' type="button">Sort Alphabetically</button>
+       
+          <ul class="pagination collection-numbers">
+            <li class="page-item pointable {{itemsPerPage == 10 ? 'active' : ''}}" (click)='updateItemsPerPage(10)'><p class="page-link">10</p></li>
+            <li class="page-item pointable {{itemsPerPage == 25 ? 'active' : ''}}" (click)='updateItemsPerPage(25)'><p class="page-link">25</p></li>
+            <li class="page-item pointable {{itemsPerPage == 50 ? 'active' : ''}}" (click)='updateItemsPerPage(50)'><p class="page-link">50</p></li>
+          </ul>
+        </nav>
     </div>
     <div class='card-body'> 
+      <div class='col-md-4'>
+        <input type='text'
+               [(ngModel)]='tableFilter' />
+      </div>
       <div class='table-responsive'>
         <table class='table'
                *ngIf='weapons && weapons.length'>
@@ -29,7 +44,7 @@
         </table>
         <nav aria-label="Page navigation for Weapons">
           <ul class="pagination justify-content-center">
-            <li *ngFor='let num of counter(numberOfPages); let i = index;'class="page-item {{i+1 == activePage ? 'active' : ''}}" (click)='updateFilterList($event)'>
+            <li *ngFor='let num of counter(numberOfPages); let i = index;'class="page-item pointable {{i+1 == activePage ? 'active' : ''}}" (click)='updatePagination($event)'>
               <p class='page-link'>{{i+1}}</p>
             </li>
           </ul>
