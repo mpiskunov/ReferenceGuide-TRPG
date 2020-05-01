@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { WeaponService } from '../weapons.service';
 import { IWeapon } from '../interfaces/weapons';
+import { ITableDetail } from 'src/app/shared/tables/table-detail';
+import { IColumnDescriptor } from 'src/app/shared/tables/column-descriptor.interface';
 
 @Component({
   templateUrl: './weapon-list.component.html',
-  styleUrls: ['./weapon-list.component.css']
+  styleUrls: ['./weapon-list.component.css'],
 })
 export class WeaponListComponent implements OnInit {
 
@@ -14,6 +16,10 @@ export class WeaponListComponent implements OnInit {
   activePage:number = 1;
   itemsPerPage:number = 10;
   sortAlphabetically:boolean = false;
+  weaponsForGenTable: ITableDetail[] = [];
+  columnsToDisplay: string[] = ['id', 'name', 'attackType', 'weaponAccuracy', 'damage', 'defaultReliability', 'weight', 'cost'];
+  weaponIdColumn: string = "id";
+  weaponNameColumn: string = "name";
 
   _listFilter = '';
   get tableFilter(): string {
@@ -45,6 +51,42 @@ export class WeaponListComponent implements OnInit {
         this.refreshItemArray();
         // Refresh amount of viewable items.
         this.refreshViewableItems(this.activePage);
+
+
+
+
+        // Run logic for the generated table.
+        for(const weapon of weapons) {
+          let wepTable: ITableDetail = {
+            columns : []
+          };
+          let weaponColumns: IColumnDescriptor[] = [];
+          let index:number = 0;
+          for (var prop in weapon) {
+            if (Object.prototype.hasOwnProperty.call(weapon, prop)) {
+              // do stuff
+
+              if(this.columnsToDisplay.indexOf(prop) > -1) {
+                let column: IColumnDescriptor = {
+                  itemName: '',
+                  itemValue : '',
+                  sortNumber : index,
+                  isHyperLink : false
+                };
+                column.itemName = prop;
+                column.itemValue = weapon[prop];
+                column.sortNumber = index++;
+                if(prop === "name")
+                  column.isHyperLink = true;
+                weaponColumns.push(column);
+              }
+            }
+          }
+          wepTable.columns = weaponColumns;
+          this.weaponsForGenTable.push(wepTable);
+        }
+
+
       },
       error: err => console.log(err)
     });
@@ -141,4 +183,6 @@ export class WeaponListComponent implements OnInit {
 
     this.refreshPagination(this.filteredWeapons.length);
   }
+
+
 }
