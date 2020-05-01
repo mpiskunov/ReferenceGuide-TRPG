@@ -1,6 +1,7 @@
+
 export interface IWeapon {
-    id: number;
-    name: string;
+    id:number;
+    name:string;
     attackType: string;
     weaponAccuracy: number;
     availability: string;
@@ -10,12 +11,9 @@ export interface IWeapon {
     range: string;
     concealment: string;
     enhancements: number;
-    weight: string;
     cost: number;
     description: string;
     weaponClassification: string;
     deleted: boolean;
     sourceID: number;
-    
-    
 }
