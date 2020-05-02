@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Constants } from '../config/constants';
-import { Observable, throwError } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { ServiceClass } from '../interfaces/service.interface';
 import { IWeapon } from './interfaces/weapons';
 import { ICompletedWeapon } from './interfaces/completed-weapon';
+//import { WeaponsModule } from './weapons.module';
 
 @Injectable({
+    //providedIn: WeaponsModule
     providedIn: 'root'
 })
 export class WeaponService extends ServiceClass {

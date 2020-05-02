@@ -1,4 +1,4 @@
-<div class='card'>
+<!-- <div class='card'>
   <div class='card-header'>
     <nav class="navbar navbar-light bg-light">
       
@@ -51,4 +51,7 @@
       </nav>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<self-populating-table *ngIf='weaponsForGenTable && weaponsForGenTable.length' [itemArray]='weaponsForGenTable'></self-populating-table>

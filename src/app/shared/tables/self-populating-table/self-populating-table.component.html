@@ -1,0 +1,51 @@
+<div class='card'>
+    <div class='card-header'>
+        <nav aria-label="Number of Weapons on page">
+            <div class='row'>
+                <div class='col-sm-4'>
+                    
+                        <button class="btn btn-sm btn-outline-secondary {{sortAlphabetically ? 'active' : ''}}" (click)='sortWeaponsAlphabeticallyClicked(!sortAlphabetically)' type="button">Sort Alphabetically</button>
+                    
+                </div>
+                <div class='col-sm-4'>
+                    <input type='text'
+                        [(ngModel)]='tableFilter' />
+                </div>
+                <div class='col-sm-4'> <ul class="pagination collection-numbers">
+                    <li class="page-item pointable {{itemsPerPage == 10 ? 'active' : ''}}" (click)='updateItemsPerPage(10)'><p class="page-link">10</p></li>
+                    <li class="page-item pointable {{itemsPerPage == 25 ? 'active' : ''}}" (click)='updateItemsPerPage(25)'><p class="page-link">25</p></li>
+                    <li class="page-item pointable {{itemsPerPage == 50 ? 'active' : ''}}" (click)='updateItemsPerPage(50)'><p class="page-link">50</p></li>
+                </ul></div>
+                
+            </div>
+        </nav>
+    </div>
+    <div class='card-body'> 
+
+      <div class='table-responsive'>
+        <table class='table'
+                *ngIf='filteredItemArray && filteredItemArray.length'>
+          <thead>
+            <tr>
+              <th *ngFor='let header of filteredItemArray[0].columns'>{{header.itemName | addSpaceToCapitalCharacters}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let wep of filteredItemArray'>
+              <td *ngFor='let col of wep.columns'>
+                  <p *ngIf="!col.isHyperLink">{{col.itemValue}}</p>
+                  <a *ngIf='col.isHyperLink' [routerLink]="['/weapons', wep.columns[indexOfID].itemValue]">{{col.itemValue}}</a>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation for Weapons">
+          <ul class="pagination justify-content-center">
+            <li *ngFor='let num of counter(numberOfPages); let i = index;'class="page-item pointable {{i+1 == activePage ? 'active' : ''}}" (click)='updatePagination($event)'>
+              <p class='page-link'>{{i+1}}</p>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
