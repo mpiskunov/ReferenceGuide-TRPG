@@ -4,7 +4,7 @@ import { WeaponDetailComponent } from './weapon-detail/weapon-detail.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { WeaponsRoutingModule } from './weapons-routing.module';
-import { ReplaceWithValuePipe } from '../shared/add-value-if-exists.pipe';
+import { ReplaceWithValuePipe } from '../shared/pipes/add-value-if-exists.pipe';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({

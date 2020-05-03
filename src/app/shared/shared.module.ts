@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { SelfPopulatingTableComponent } from './tables/self-populating-table/self-populating-table.component';
-import { AddSpaceToCapitalsPipe } from './space-capital-characters.pipe';
+import { AddSpaceToCapitalsPipe } from './pipes/space-capital-characters.pipe';
 
 @NgModule({
   declarations: [

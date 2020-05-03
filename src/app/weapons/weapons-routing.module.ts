@@ -5,8 +5,8 @@ import { WeaponDetailComponent } from './weapon-detail/weapon-detail.component';
 
 
 const routes: Routes = [ 
-  { path: 'weapons', component: WeaponListComponent},
-  { path: 'weapons/:id', component: WeaponDetailComponent}
+  { path: 'Weapons', component: WeaponListComponent},
+  { path: 'Weapons/:id', component: WeaponDetailComponent}
 ];
 
 @NgModule({
