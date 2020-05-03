@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ITableDetail } from '../table-detail';
-import { IColumnDescriptor } from '../column-descriptor.interface';
 
 @Component({
   selector: 'self-populating-table',
@@ -23,6 +22,7 @@ export class SelfPopulatingTableComponent implements OnInit {
   itemsPerPage:number = 10;
   sortAlphabetically:boolean = false;
   weaponsForGenTable: ITableDetail[] = [];
+  @Input() callbackUrl: string;
 
 
   _listFilter = '';
@@ -34,7 +34,7 @@ export class SelfPopulatingTableComponent implements OnInit {
     this.refreshViewableItems(1);
   }
 
-  constructor() { }
+  constructor() {}
 
   performFilter(filterBy: string): ITableDetail[] {
     // Set filter to lowercase.
@@ -121,7 +121,7 @@ export class SelfPopulatingTableComponent implements OnInit {
 
 
   // 
-  sortWeaponsAlphabeticallyClicked(value:boolean)
+  sortItemsAlphabeticallyClicked(value:boolean)
   {
     this.sortAlphabetically = value;
     this.refreshItemArray();
