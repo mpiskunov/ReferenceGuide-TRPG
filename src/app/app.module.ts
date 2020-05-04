@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ArmorListComponent } from './armor/armor-list/armor-list.component';
 import { WeaponsModule } from './weapons/weapons.module';
+import { ItemsModule } from './items/items.module';
 
 @NgModule({
   // This is where any internal components go.
@@ -21,7 +22,8 @@ import { WeaponsModule } from './weapons/weapons.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    WeaponsModule
+    WeaponsModule,
+    ItemsModule
   ],
   providers: [],
   // Starting component of the app, nothing to do with bootstrap front-end library!
