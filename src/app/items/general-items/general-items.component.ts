@@ -23,7 +23,7 @@ export class GeneralItemsComponent extends TableBuilderComponent implements OnIn
 
     let url = route.url.subscribe({
       next: url => {
-        debugger;
+        //debugger;
         this.callBackUrl = url[0].path;
       }
     });
