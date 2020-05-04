@@ -6,7 +6,7 @@ import { ArmorListComponent } from './armor/armor-list/armor-list.component';
 
 const routes: Routes = [ 
   { path: '', component: HomeComponent },
-  { path: 'armors', component: ArmorListComponent},
+  { path: 'Armors', component: ArmorListComponent},
 ];
 
 @NgModule({
@@ -14,3 +14,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// an array of routes so you dont have to keep importing components in app.component.ts
+export const routingComponents = [HomeComponent,ArmorListComponent]

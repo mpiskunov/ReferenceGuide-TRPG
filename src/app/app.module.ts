@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ArmorListComponent } from './armor/armor-list/armor-list.component';
+//import { HomeComponent } from './home/home.component';
+//import { ArmorListComponent } from './armor/armor-list/armor-list.component';
 import { WeaponsModule } from './weapons/weapons.module';
 import { ItemsModule } from './items/items.module';
 
@@ -14,8 +14,7 @@ import { ItemsModule } from './items/items.module';
   // app.module needs to know if any more components are created, so you must import the component as seen above.
   declarations: [
     AppComponent,
-    HomeComponent,
-    ArmorListComponent
+    routingComponents
   ],
   // Imports from other app modules
   imports: [
