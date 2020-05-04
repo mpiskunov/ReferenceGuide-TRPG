@@ -1,13 +1,31 @@
-<nav class='navbar navbar-expand navbar-light bg-light pb-2 navbar-dark bg-dark top-navbar'>
-  <a class='navbar-brand'>{{title}}</a>
-  <ul class='nav nav-pills'>
-    <li><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">Home</a></li>
-    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/Weapons']">Weapons</a></li>
-    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/Armors']">Armors</a></li>
-    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/GeneralGears']">Gear</a></li>
-    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/FoodAndDrink']">Food & Drink</a></li>
-  </ul>
+<!-- example 5 left and center only with empty space right -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-nowrap top-navbar">
+  <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#TopNavBar" aria-controls="TopNavBar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <span class="navbar-brand w-100">  <a class="nav-link" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">{{title}}</a></span>
+  <div class="navbar-collapse collapse w-100 justify-content-center" id="TopNavBar">
+      <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+              <a class="nav-link" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link"  routerLinkActive='active' [routerLink]="['/Weapons']">Weapons</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLinkActive='active' [routerLink]="['/Armors']">Armors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLinkActive='active' [routerLink]="['/GeneralGears']">Gear</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLinkActive='active' [routerLink]="['/FoodAndDrink']">Food & Drink</a>
+          </li>
+      </ul>
+  </div>
+  <div class="w-100"></div>
 </nav>
+
 <div class='container pt-5'>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
