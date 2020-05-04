@@ -10,7 +10,7 @@ export interface IArmor{
     cost:number;
     description: string;
     weightClassification: number;
-    deleted: true
+    deleted: boolean;
     sourceID: number;
      
 }
