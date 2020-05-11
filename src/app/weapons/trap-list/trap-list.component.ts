@@ -3,7 +3,7 @@ import { TableBuilderComponent } from 'src/app/shared/interfaces/table-builder.i
 import { WitcherApiService } from 'src/app/shared/api-service/witcher-api.service';
 import { Router } from '@angular/router';
 import { ApiEndPoint } from 'src/app/shared/api-service/api-endpoint';
-import { ITrap } from '../interfaces/trap';
+import { Trap } from 'src/app/shared/model/trap';
 
 @Component({
   selector: 'app-trap-list',
@@ -26,9 +26,9 @@ export class TrapsComponent extends TableBuilderComponent implements OnInit {
   ngOnInit(): void {
     this.endPoint = ApiEndPoint.TRAPS;
 
-    this.witcherService.getAll<ITrap[]>(this.endPoint).subscribe({
+    this.witcherService.getAll<Trap[]>(this.endPoint).subscribe({
       next: traps => {
-        this.generateTableBuilder<ITrap>(traps);
+        this.generateTableBuilder<Trap>(traps);
       },
       error: err => console.log(err)
     });

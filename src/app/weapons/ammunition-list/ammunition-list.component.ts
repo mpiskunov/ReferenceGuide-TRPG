@@ -3,7 +3,7 @@ import { TableBuilderComponent } from 'src/app/shared/interfaces/table-builder.i
 import { WitcherApiService } from 'src/app/shared/api-service/witcher-api.service';
 import { Router } from '@angular/router';
 import { ApiEndPoint } from 'src/app/shared/api-service/api-endpoint';
-import { IAmmunition } from '../interfaces/ammunition';
+import { Ammunition } from 'src/app/shared/model/models';
 
 @Component({
   selector: 'app-ammunition-list',
@@ -26,9 +26,9 @@ export class AmmunitionsComponent extends TableBuilderComponent implements OnIni
   ngOnInit(): void {
     this.endPoint = ApiEndPoint.AMMO;
 
-    this.witcherService.getAll<IAmmunition[]>(this.endPoint).subscribe({
+    this.witcherService.getAll<Ammunition[]>(this.endPoint).subscribe({
       next: ammo => {
-        this.generateTableBuilder<IAmmunition>(ammo);
+        this.generateTableBuilder<Ammunition>(ammo);
       },
       error: err => console.log(err)
     });
