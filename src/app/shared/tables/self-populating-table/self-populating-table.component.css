@@ -8,6 +8,10 @@
     margin-bottom: 0em !important;
 }
 
+ul, .pagination-list {
+    margin-bottom: 0px !important;
+}
+
  /* Extra small devices (portrait phones, less than 576px) */
  /* No media query since this is the default in Bootstrap */
  .table-actions {
@@ -41,3 +45,23 @@
 @media (min-width: 1200px) { 
     
  }
+
+ 
+
+:host-context(app-weapon-list) #self-gen-header {
+    background-color: rgba(255, 0, 0, 0.75);
+  }
+
+:host-context(app-weapon-list) .page-item.active .page-link {
+    background-color: rgb(201, 201, 201);
+    border-color:  rgb(201, 201, 201);;
+}
+
+:host-context(app-weapon-list) a {
+    color: rgba(255, 0, 0, 0.75);
+}
+
+
+:host-context(app-weapon-list) .card {
+    border-color: black;
+}

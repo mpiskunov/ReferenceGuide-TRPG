@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { WitcherApiService } from 'src/app/shared/api-service/witcher-api.service';
-import { IGeneralGear } from './interfaces/general-gear';
 import { ApiEndPoint } from 'src/app/shared/api-service/api-endpoint';
 import { ITableDetail } from 'src/app/shared/tables/table-detail';
 import { TableBuilderComponent } from 'src/app/shared/interfaces/table-builder.interface';
 import { ActivatedRoute } from '@angular/router';
+import { GeneralGear } from 'src/app/shared/model/models';
 
 @Component({
   templateUrl: './general-items.component.html',
@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GeneralItemsComponent extends TableBuilderComponent implements OnInit  {
 
-  generalGearList:IGeneralGear[];
+  generalGearList:GeneralGear[];
   columnsToDisplay: string[] = ['id', 'name', 'weight', 'cost',  'generalGearClassification'];
   itemsForGenTable: ITableDetail[] = [];
   apiEndpoint: ApiEndPoint = ApiEndPoint.GENERAL_GEAR;
@@ -31,10 +31,10 @@ export class GeneralItemsComponent extends TableBuilderComponent implements OnIn
    }
 
   ngOnInit(): void {
-    this.apiService.getAll<IGeneralGear[]>(this.apiEndpoint).subscribe({
+    this.apiService.getAll<GeneralGear[]>(this.apiEndpoint).subscribe({
       next: gears => {
         this.generalGearList = gears;
-        this.generateTableBuilder<IGeneralGear>(this.generalGearList);
+        this.generateTableBuilder<GeneralGear>(this.generalGearList);
       }
     });
   }

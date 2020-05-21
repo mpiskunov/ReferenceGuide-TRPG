@@ -3,22 +3,30 @@ import { WitcherApiService } from 'src/app/shared/api-service/witcher-api.servic
 import { Router } from '@angular/router';
 import { TableBuilderComponent } from 'src/app/shared/interfaces/table-builder.interface';
 import { ApiEndPoint } from 'src/app/shared/api-service/api-endpoint';
-import { IBomb } from '../interfaces/bomb';
+import { Bomb } from 'src/app/shared/model/bomb';
 
 @Component({
   selector: 'app-bomb-list',
   templateUrl: './bomb-list.component.html',
-  styleUrls: ['./bomb-list.component.css']
+  styleUrls: ['./bomb-list.component.css'],
 })
-
 export class BombsComponent extends TableBuilderComponent implements OnInit {
-
-  
-  columnsToDisplay: string[] = ['id', 'name', 'attackType', 'range', 'damage', 'weight', 'cost'];
+  columnsToDisplay: string[] = [
+    'id',
+    'name',
+    'attackType',
+    'range',
+    'damage',
+    'weight',
+    'cost',
+  ];
   endPoint: ApiEndPoint;
   callBackUrl: string;
-  
-  constructor(private witcherService: WitcherApiService, private router: Router) {
+
+  constructor(
+    private witcherService: WitcherApiService,
+    private router: Router
+  ) {
     super();
     this.callBackUrl = router.url;
   }
@@ -26,12 +34,11 @@ export class BombsComponent extends TableBuilderComponent implements OnInit {
   ngOnInit(): void {
     this.endPoint = ApiEndPoint.BOMBS;
 
-    this.witcherService.getAll<IBomb[]>(this.endPoint).subscribe({
-      next: bombs => {
-        this.generateTableBuilder<IBomb>(bombs);
+    this.witcherService.getAll<Bomb[]>(this.endPoint).subscribe({
+      next: (bombs) => {
+        this.generateTableBuilder<Bomb>(bombs);
       },
-      error: err => console.log(err)
+      error: (err) => console.log(err),
     });
   }
-
 }
