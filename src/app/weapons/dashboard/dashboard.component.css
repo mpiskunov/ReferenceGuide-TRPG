@@ -1,0 +1,18 @@
+.btn.btn-primary {
+  background-color: rgba(255, 0, 0, 0.75);
+  border-color: rgba(117, 0, 0, 0.75);
+}
+
+.btn.btn-primary:hover {
+  background-color: rgba(117, 0, 0, 0.75);
+}
+
+.card-header {
+  
+  /* background: -webkit-linear-gradient( rgb(0, 0, 0), rgb(110, 110, 110)); */
+  /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+  background-color: rgb(184, 25, 25);
+  /* color: rgb(202, 202, 202); */
+  color:white;
+}

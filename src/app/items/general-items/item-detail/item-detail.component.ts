@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IGeneralGear } from '../interfaces/general-gear';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WitcherApiService } from 'src/app/shared/api-service/witcher-api.service';
 import { ApiEndPoint } from 'src/app/shared/api-service/api-endpoint';
+import { GeneralGear } from 'src/app/shared/model/models';
 
 @Component({
   selector: 'app-item-detail',
@@ -11,7 +11,7 @@ import { ApiEndPoint } from 'src/app/shared/api-service/api-endpoint';
 })
 export class ItemDetailComponent implements OnInit {
 
-  generalGear: IGeneralGear;
+  generalGear: GeneralGear;
   callBackUrl: string;
 
   constructor(private route: ActivatedRoute,
@@ -30,7 +30,7 @@ export class ItemDetailComponent implements OnInit {
     {
       const id = +param;
 
-      this.apiService.getSingularById<IGeneralGear>(ApiEndPoint.GENERAL_GEAR, id).subscribe({
+      this.apiService.getSingularById<GeneralGear>(ApiEndPoint.GENERAL_GEAR, id).subscribe({
         next: generalGear => {
           this.generalGear = generalGear;
         },

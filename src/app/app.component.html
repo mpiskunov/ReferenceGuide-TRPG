@@ -1,31 +1,85 @@
 <!-- example 5 left and center only with empty space right -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-nowrap top-navbar">
-  <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#TopNavBar" aria-controls="TopNavBar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <button
+    class="navbar-toggler mr-2"
+    type="button"
+    data-toggle="collapse"
+    data-target="#TopNavBar"
+    aria-controls="TopNavBar"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
   </button>
-  <span class="navbar-brand w-100">  <a class="nav-link" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">{{title}}</a></span>
-  <div class="navbar-collapse collapse w-100 justify-content-center" id="TopNavBar">
-      <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-              <a class="nav-link" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link"  routerLinkActive='active' [routerLink]="['/Weapons']">Weapons</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLinkActive='active' [routerLink]="['/Armors']">Armors</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLinkActive='active' [routerLink]="['/GeneralGears']">Gear</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLinkActive='active' [routerLink]="['/FoodAndDrink']">Food & Drink</a>
-          </li>
-      </ul>
+  <span class="navbar-brand w-100"
+    ><a
+      class="nav-link"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['/']"
+      >{{ title }}</a
+    ></span
+  >
+  <div
+    class="navbar-collapse collapse w-100 justify-content-center"
+    id="TopNavBar"
+  >
+    <ul class="navbar-nav mx-auto top-nav-list">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['/']"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/WeaponDashboard']"
+          >Weapons</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/Armors']"
+          >Armors</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/GeneralGears']"
+          >Gear</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/FoodAndDrink']"
+          >Food & Drink</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/Monsters']"
+          >Monstahs Kehd</a
+        >
+      </li>
+    </ul>
   </div>
   <div class="w-100"></div>
 </nav>
 
-<div class='container pt-5'>
+<div class="container pt-5 top-container">
   <router-outlet></router-outlet>
 </div>
+<br />
+<footer class="footer">
+  This is a footer
+</footer>

@@ -8,15 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { WeaponsModule } from './weapons/weapons.module';
 import { ItemsModule } from './items/items.module';
 import { ArmorModule } from './armor/armor-list/armor.module';
+import { MonstersModule } from './monsters/monsters.module';
 
 @NgModule({
   // This is where any internal components go.
   // app.module needs to know if any more components are created, so you must import the component as seen above.
-  declarations: [
-    AppComponent,
-    HomeComponent
-    
-  ],
+  declarations: [AppComponent],
   // Imports from other app modules
   imports: [
     BrowserModule,
@@ -24,10 +21,11 @@ import { ArmorModule } from './armor/armor-list/armor.module';
     AppRoutingModule,
     WeaponsModule,
     ItemsModule,
-    ArmorModule
+    ArmorModule,
+    MonstersModule,
   ],
   providers: [],
   // Starting component of the app, nothing to do with bootstrap front-end library!
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
