@@ -10,32 +10,41 @@ import { Weapon } from 'src/app/shared/model/weapon';
   templateUrl: './weapon-list.component.html',
   styleUrls: ['./weapon-list.component.css'],
 })
-export class WeaponListComponent extends TableBuilderComponent implements OnInit {
-
-  weapons:Weapon[] = [] ;
-  columnsToDisplay: string[] = ['id', 'name', 'attackType', 'weaponAccuracy', 'damage', 'defaultReliability', 'weight', 'cost'];
+export class WeaponListComponent extends TableBuilderComponent
+  implements OnInit {
+  weapons: Weapon[] = [];
+  columnsToDisplay: string[] = [
+    'id',
+    'name',
+    'attackType',
+    'weaponAccuracy',
+    'damage',
+    'defaultReliability',
+    'weight',
+    'cost',
+  ];
   endPoint: ApiEndPoint;
   callBackUrl: string;
 
-  constructor(private witcherService: WitcherApiService, private router: Router) {
+  constructor(
+    private witcherService: WitcherApiService,
+    private router: Router
+  ) {
     super();
-    this.callBackUrl = router.url;
+    this.callBackUrl = 'Weapons';
   }
 
   // Use this method when calling Weapon service.
   ngOnInit(): void {
-
     this.endPoint = ApiEndPoint.WEAPONS;
 
     this.witcherService.getAll<Weapon[]>(this.endPoint).subscribe({
-      next: weapons => {
+      next: (weapons) => {
         // Set the weapons array.
         this.weapons = weapons;
         this.generateTableBuilder<Weapon>(this.weapons);
       },
-      error: err => console.log(err)
+      error: (err) => console.log(err),
     });
   }
-
-
 }

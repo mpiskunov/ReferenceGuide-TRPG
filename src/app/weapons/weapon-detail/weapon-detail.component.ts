@@ -10,19 +10,13 @@ import { WeaponViewModel } from 'src/app/shared/model/models';
 })
 export class WeaponDetailComponent implements OnInit {
   public completedWeapon: WeaponViewModel;
-  public callBackUrl: string;
+  public callBackUrl: string = 'WeaponDashboard';
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private apiService: WitcherApiService
-  ) {
-    let url = route.url.subscribe({
-      next: (url) => {
-        this.callBackUrl = url[0].path;
-      },
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     const param = this.route.snapshot.paramMap.get('id');

@@ -13,25 +13,29 @@ import { BombDetailComponent } from './bomb-detail/bomb-detail.component';
 import { TrapDetailComponent } from './trap-detail/trap-detail.component';
 import { AmmunitionDetailComponent } from './ammunition-detail/ammunition-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RunesListComponent } from './runes-list/runes-list.component';
+import { RuneDetailComponent } from './rune-detail/rune-detail.component';
 
 @NgModule({
   declarations: [
-      WeaponListComponent,
-      WeaponDetailComponent,
-      ReplaceWithValuePipe,
-      BombsComponent,
-      TrapsComponent,
-      AmmunitionsComponent,
-      BombDetailComponent,
-      TrapDetailComponent,
-      AmmunitionDetailComponent,
-      DashboardComponent
+    WeaponListComponent,
+    WeaponDetailComponent,
+    ReplaceWithValuePipe,
+    BombsComponent,
+    TrapsComponent,
+    AmmunitionsComponent,
+    BombDetailComponent,
+    TrapDetailComponent,
+    RunesListComponent,
+    RuneDetailComponent,
+    AmmunitionDetailComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     WeaponsRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
-export class WeaponsModule { }
+export class WeaponsModule {}

@@ -21,14 +21,13 @@ export class BombsComponent extends TableBuilderComponent implements OnInit {
     'cost',
   ];
   endPoint: ApiEndPoint;
-  callBackUrl: string;
+  callBackUrl: string = 'Bombs';
 
   constructor(
     private witcherService: WitcherApiService,
     private router: Router
   ) {
     super();
-    this.callBackUrl = router.url;
   }
 
   ngOnInit(): void {

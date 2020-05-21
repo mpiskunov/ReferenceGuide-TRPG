@@ -6,6 +6,7 @@ export enum ApiEndPoint {
   BOMBS = 'Bombs',
   TRAPS = 'Traps',
   AMMO = 'Ammunitions',
+  RUNES = 'Runes',
   MONSTERS = 'Monsters',
   MONSTERS_COMPLETE = 'CompletedMonsters',
 }

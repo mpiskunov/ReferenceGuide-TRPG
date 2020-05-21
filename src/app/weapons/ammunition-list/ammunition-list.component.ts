@@ -8,30 +8,38 @@ import { Ammunition } from 'src/app/shared/model/models';
 @Component({
   selector: 'app-ammunition-list',
   templateUrl: './ammunition-list.component.html',
-  styleUrls: ['./ammunition-list.component.css']
+  styleUrls: ['./ammunition-list.component.css'],
 })
-
-export class AmmunitionsComponent extends TableBuilderComponent implements OnInit {
-
+export class AmmunitionsComponent extends TableBuilderComponent
+  implements OnInit {
   //weapons:IWeapon[] = [] ;
-  columnsToDisplay: string[] = ['id', 'name', 'attackType', 'defaultReliability', 'concealment', 'weight', 'cost'];
+  columnsToDisplay: string[] = [
+    'id',
+    'name',
+    'attackType',
+    'defaultReliability',
+    'concealment',
+    'weight',
+    'cost',
+  ];
   endPoint: ApiEndPoint;
-  callBackUrl: string;
+  callBackUrl: string = 'Ammunitions';
 
-  constructor(private witcherService: WitcherApiService, private router: Router) {
+  constructor(
+    private witcherService: WitcherApiService,
+    private router: Router
+  ) {
     super();
-    this.callBackUrl = router.url;
   }
 
   ngOnInit(): void {
     this.endPoint = ApiEndPoint.AMMO;
 
     this.witcherService.getAll<Ammunition[]>(this.endPoint).subscribe({
-      next: ammo => {
+      next: (ammo) => {
         this.generateTableBuilder<Ammunition>(ammo);
       },
-      error: err => console.log(err)
+      error: (err) => console.log(err),
     });
   }
-
 }

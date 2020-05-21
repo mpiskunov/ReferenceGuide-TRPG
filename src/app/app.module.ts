@@ -3,12 +3,11 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-//import { ArmorListComponent } from './armor/armor-list/armor-list.component';
 import { WeaponsModule } from './weapons/weapons.module';
 import { ItemsModule } from './items/items.module';
 import { ArmorModule } from './armor/armor-list/armor.module';
 import { MonstersModule } from './monsters/monsters.module';
+import { RunesListComponent } from './weapons/runes-list/runes-list.component';
 
 @NgModule({
   // This is where any internal components go.
