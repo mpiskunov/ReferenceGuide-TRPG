@@ -2,6 +2,7 @@
   <div class="card" *ngIf="completedWeapon">
     <h5 class="card-header">{{ completedWeapon.weapon.name }}</h5>
     <div class="card-body">
+      <h1 class="border-bottom">General</h1>
       <h5 class="card-title">
         {{
           completedWeapon.weapon.weaponClassification
@@ -33,6 +34,55 @@
         <strong>Concealment: </strong
         >{{ completedWeapon.weapon.concealment | addSpaceToCapitalCharacters }}
       </p>
+      <br />
+      <div
+        *ngIf="
+          completedWeapon.craftingDiagram ||
+          completedWeapon.craftingDiagramComponents
+        "
+      >
+        <h1 class="border-bottom">Crafting</h1>
+        <div *ngIf="completedWeapon.craftingDiagram">
+          <br />
+          <h5>Diagram</h5>
+          <br />
+          <p>
+            <strong>Crafting DC:</strong>
+            {{ completedWeapon.craftingDiagram.craftingDC }}
+          </p>
+          <p>
+            <strong>Time:</strong>
+            {{ completedWeapon.craftingDiagram.time }}
+          </p>
+          <p>
+            <strong>Investment:</strong>
+            {{ completedWeapon.craftingDiagram.investment }} crowns
+          </p>
+          <p>
+            <strong>Cost:</strong>
+            {{ completedWeapon.craftingDiagram.cost }} crowns
+          </p>
+          <p>
+            <strong>Skill Level:</strong>
+            {{ completedWeapon.craftingDiagram.skillLevel }}
+          </p>
+        </div>
+        <br />
+        <div
+          *ngIf="
+            completedWeapon.craftingDiagramComponents &&
+            completedWeapon.craftingDiagramComponents.length > 0
+          "
+        >
+          <h5>Components</h5>
+          <br />
+          <ul
+            *ngFor="let component of completedWeapon.craftingDiagramComponents"
+          >
+            <li>{{ component.craftingComponent.name }} x {{component.amount}}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <br />

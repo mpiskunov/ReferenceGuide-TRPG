@@ -1,13 +1,13 @@
 <div class="container pt-5">
   <div class="row justify-content-center">
-    <h2>{{ bombVM.bomb.name }} (Bomb)</h2>
+    <h2>{{ bombVM.bomb.name }} (bomb)</h2>
   </div>
   <br />
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card" *ngIf="bombVM">
         <div class="page-header"></div>
-        <h5 class="card-header">{{ bombVM.bomb.name }} (Bomb)</h5>
+        <h5 class="card-header">{{ bombVM.bomb.name }} (bomb)</h5>
         <div class="card-body">
           <div class="border-bottom"><h3>General</h3></div>
           <br />
@@ -32,10 +32,12 @@
             <h3>Formulae Components</h3>
           </div>
           <br />
-          <li *ngFor="let formComp of bombVM.bombFormulaeComponents">
-            <strong>{{ formComp.componentName }}</strong> x
-            {{ formComp.amount }}
-          </li>
+          <ul *ngFor="let formComp of bombVM.bombFormulaeComponents">
+            <li>
+              <strong>{{ formComp.componentName }}</strong> x
+              {{ formComp.amount }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>

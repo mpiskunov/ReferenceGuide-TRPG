@@ -1,1 +1,25 @@
-<p>rune-detail works!</p>
+<div *ngIf="rune" class="container pt-5">
+  <div class="row justify-content-center">
+    <h2>{{ rune.name }}</h2>
+  </div>
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" *ngIf="rune">
+        <div class="page-header"></div>
+        <h5 class="card-header">{{ rune.name }}</h5>
+        <div class="card-body">
+          <br />
+          <p><strong>Effect: </strong>{{ rune.effect }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary"
+    (click)="onBack()"
+    style="width: 80px; margin-bottom: 20px;"
+  >
+    <i class="fa fa-chevron-left"></i> Back
+  </button>
+</div>

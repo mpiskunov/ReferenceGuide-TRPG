@@ -1,1 +1,54 @@
-<p>trap-detail works!</p>
+<div *ngIf="trapVM" class="container pt-5">
+  <div class="row justify-content-center">
+    <h2>{{ trapVM.trap.name }} (trap)</h2>
+  </div>
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" *ngIf="trapVM">
+        <div class="page-header"></div>
+        <h5 class="card-header">{{ trapVM.trap.name }} (trap)</h5>
+        <div class="card-body">
+          <div class="border-bottom">
+            <h3>General</h3>
+          </div>
+          <br />
+          <p><strong>Damage: </strong>{{ trapVM.trap.damage }}</p>
+          <div *ngIf="trapVM.trap.effect">
+            <p><strong>Effects: </strong> {{ trapVM.trap.effect }}</p>
+          </div>
+          <br />
+          <div class="border-bottom">
+            <h3>Diagram</h3>
+          </div>
+          <br />
+          <p><strong>Craft DC: </strong>{{ trapVM.trapDiagram.craftDC }}</p>
+          <p><strong>Time: </strong>{{ trapVM.trapDiagram.time }}</p>
+          <p>
+            <strong>Investment: </strong
+            >{{ trapVM.trapDiagram.investment }} crowns
+          </p>
+          <p><strong>Cost: </strong>{{ trapVM.trapDiagram.cost }} crowns</p>
+          <br />
+          <div class="border-bottom">
+            <h3>Diagram Components</h3>
+          </div>
+          <br />
+          <ul *ngFor="let component of trapVM.trapDiagramComponents">
+            <li>
+              <strong>{{ component.componentName }}</strong> x
+              {{ component.amount }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary"
+    (click)="onBack()"
+    style="width: 80px; margin-bottom: 20px;"
+  >
+    <i class="fa fa-chevron-left"></i> Back
+  </button>
+</div>

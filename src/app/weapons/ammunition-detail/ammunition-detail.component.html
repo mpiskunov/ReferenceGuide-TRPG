@@ -1,1 +1,58 @@
-<p>ammunition-detail works!</p>
+<div *ngIf="ammoVM" class="container pt-5">
+  <div class="row justify-content-center">
+    <h2>{{ ammoVM.ammunition.name }} (ammunition)</h2>
+  </div>
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" *ngIf="ammoVM">
+        <div class="page-header"></div>
+        <h5 class="card-header">{{ ammoVM.ammunition.name }} (ammunition)</h5>
+        <div class="card-body">
+          <div class="border-bottom">
+            <h3>General</h3>
+          </div>
+          <br />
+          <p><strong>Damage: </strong>{{ ammoVM.ammunition.attackType }}</p>
+          <div *ngIf="ammoVM.ammunitionEffects">
+            <!-- <p><strong>Effects: </strong> {{ ammoVM.ammunitionEffects }}</p> -->
+          </div>
+          <br />
+          <div class="border-bottom">
+            <h3>Diagram</h3>
+          </div>
+          <br />
+          <p><strong>Amount: </strong>{{ ammoVM.craftingDiagram.amount }}</p>
+          <p><strong>Craft DC: </strong>{{ ammoVM.craftingDiagram.name }}</p>
+          <p>
+            <strong>Craft DC: </strong>{{ ammoVM.craftingDiagram.craftingDC }}
+          </p>
+          <p><strong>Time: </strong>{{ ammoVM.craftingDiagram.time }}</p>
+          <p>
+            <strong>Investment: </strong
+            >{{ ammoVM.craftingDiagram.investment }} crowns
+          </p>
+          <p><strong>Cost: </strong>{{ ammoVM.craftingDiagram.cost }} crowns</p>
+          <br />
+          <div class="border-bottom">
+            <h3>Diagram Components</h3>
+          </div>
+          <br />
+          <ul *ngFor="let component of ammoVM.craftingDiagramComponents">
+            <li>
+              <strong>{{ component.craftingComponent.name }}</strong> x
+              {{ component.amount }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary"
+    (click)="onBack()"
+    style="width: 80px; margin-bottom: 20px;"
+  >
+    <i class="fa fa-chevron-left"></i> Back
+  </button>
+</div>
