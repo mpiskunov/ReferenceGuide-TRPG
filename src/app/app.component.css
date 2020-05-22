@@ -1,6 +1,6 @@
 .top-navbar {
   font-family: "Righteous", serif;
-  padding: 30px;
+  /* padding: 30px; */
 }
 
 .top-nav-list > .nav-item {
@@ -9,6 +9,8 @@
 
 a.nav-link {
   color: rgb(201, 201, 201);
+  padding: 15px;
+  margin-right: 15px;
 }
 
 span > a {
@@ -16,20 +18,4 @@ span > a {
   background: -webkit-linear-gradient(rgb(95, 95, 95), #eee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #363d44;
-  color: white;
-  text-align: center;
-  padding: 30px;
-  z-index: 999999999;
-}
-
-.top-container {
-  padding-bottom: 75px;
 }

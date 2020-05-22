@@ -1,1 +1,50 @@
-<p>bomb-detail works!</p>
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <h2>{{ bombVM.bomb.name }} (Bomb)</h2>
+  </div>
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" *ngIf="bombVM">
+        <div class="page-header"></div>
+        <h5 class="card-header">{{ bombVM.bomb.name }} (Bomb)</h5>
+        <div class="card-body">
+          <div class="border-bottom"><h3>General</h3></div>
+          <br />
+          <p><strong>Damage: </strong>{{ bombVM.bomb.damage }}</p>
+          <div *ngIf="bombVM.bomb.effect">
+            <p><strong>Effects: </strong> {{ bombVM.bomb.effect }}</p>
+          </div>
+          <br />
+          <div class="border-bottom">
+            <h3>Formulae</h3>
+          </div>
+          <br />
+          <p><strong>Craft DC: </strong>{{ bombVM.bombFormulae.craftDC }}</p>
+          <p><strong>Time: </strong>{{ bombVM.bombFormulae.time }}</p>
+          <p>
+            <strong>Investment: </strong
+            >{{ bombVM.bombFormulae.investment }} crowns
+          </p>
+          <p><strong>Cost: </strong>{{ bombVM.bombFormulae.cost }} crowns</p>
+          <br />
+          <div class="border-bottom">
+            <h3>Formulae Components</h3>
+          </div>
+          <br />
+          <li *ngFor="let formComp of bombVM.bombFormulaeComponents">
+            <strong>{{ formComp.componentName }}</strong> x
+            {{ formComp.amount }}
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary"
+    (click)="onBack()"
+    style="width: 80px; margin-bottom: 20px;"
+  >
+    <i class="fa fa-chevron-left"></i> Back
+  </button>
+</div>

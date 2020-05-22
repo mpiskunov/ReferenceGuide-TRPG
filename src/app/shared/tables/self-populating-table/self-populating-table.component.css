@@ -1,67 +1,65 @@
-
-
 .pointable {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .no-margin-bottom {
-    margin-bottom: 0em !important;
+  margin-bottom: 0em !important;
 }
 
-ul, .pagination-list {
-    margin-bottom: 0px !important;
+ul,
+.pagination-list {
+  margin-bottom: 0px !important;
 }
 
- /* Extra small devices (portrait phones, less than 576px) */
- /* No media query since this is the default in Bootstrap */
- .table-actions {
-    padding-bottom: 10px;
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query since this is the default in Bootstrap */
+.table-actions {
+  padding-bottom: 10px;
 }
 
- /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
 
- }
-
- /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-    .table-actions {
-        padding-bottom: 0px;
-    }
-
-    .collection-numbers {
-        display: inline-flex;
-        float: right;
-        margin-bottom: 0px !important;
-    }
- }
-
- /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-    
- }
-
- /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-    
- }
-
- 
-
-:host-context(app-weapon-list) #self-gen-header {
-    background-color: rgba(255, 0, 0, 0.75);
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .table-actions {
+    padding-bottom: 0px;
   }
 
-:host-context(app-weapon-list) .page-item.active .page-link {
-    background-color: rgb(201, 201, 201);
-    border-color:  rgb(201, 201, 201);;
+  .collection-numbers {
+    display: inline-flex;
+    float: right;
+    margin-bottom: 0px !important;
+  }
 }
 
-:host-context(app-weapon-list) a {
-    color: rgba(255, 0, 0, 0.75);
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
 }
 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
 
-:host-context(app-weapon-list) .card {
-    border-color: black;
+:host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
+  #self-gen-header {
+  background-color: rgba(255, 0, 0, 0.658);
+}
+
+:host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
+  .page-item.active
+  .page-link {
+  background-color: rgb(201, 201, 201);
+  border-color: rgb(201, 201, 201);
+}
+
+:host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
+  a {
+  color: rgba(255, 0, 0, 0.75);
+}
+
+:host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
+  .card {
+  border-color: black;
 }

@@ -4,6 +4,7 @@ export enum ApiEndPoint {
   ARMORS = 'Armors',
   GENERAL_GEAR = 'GeneralGears',
   BOMBS = 'Bombs',
+  BOMBS_COMPLETE = 'CompletedBombs',
   TRAPS = 'Traps',
   AMMO = 'Ammunitions',
   RUNES = 'Runes',

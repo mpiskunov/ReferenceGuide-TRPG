@@ -1,21 +1,42 @@
-<div class="card" *ngIf='completedWeapon'>
-    <h5 class="card-header">{{completedWeapon.weapon.name}}</h5>
+<div class="container pt-5">
+  <div class="card" *ngIf="completedWeapon">
+    <h5 class="card-header">{{ completedWeapon.weapon.name }}</h5>
     <div class="card-body">
-        <h5 class="card-title">{{completedWeapon.weapon.weaponClassification | addSpaceToCapitalCharacters}}</h5>
-        <p class="card-text"><i>"{{completedWeapon.weapon.description}}"</i></p>
-        <p><strong>Damage: </strong>{{completedWeapon.weapon.damage}}</p>
-        <div *ngIf='completedWeapon.weaponEffects'>
-            <p><strong>Effects: </strong></p>
-            <ul>
-                <li *ngFor='let effect of completedWeapon.weaponEffects' >
-                    <strong>{{effect.effect.name | replaceValueIfExists:effect.value}}</strong> - {{effect.effect.description}}
-                </li>
-            </ul>
-        </div>
-        <p><strong>Concealment: </strong>{{completedWeapon.weapon.concealment | addSpaceToCapitalCharacters}}</p>
+      <h5 class="card-title">
+        {{
+          completedWeapon.weapon.weaponClassification
+            | addSpaceToCapitalCharacters
+        }}
+      </h5>
+      <p class="card-text">
+        <i>"{{ completedWeapon.weapon.description }}"</i>
+      </p>
+      <p><strong>Damage: </strong>{{ completedWeapon.weapon.damage }}</p>
+      <div
+        *ngIf="
+          completedWeapon.weaponEffects &&
+          completedWeapon.weaponEffects.length > 0
+        "
+      >
+        <p><strong>Effects: </strong></p>
+        <ul>
+          <li *ngFor="let effect of completedWeapon.weaponEffects">
+            <strong>{{
+              effect.effect.name | replaceValueIfExists: effect.value
+            }}</strong>
+            -
+            {{ effect.effect.description }}
+          </li>
+        </ul>
+      </div>
+      <p>
+        <strong>Concealment: </strong
+        >{{ completedWeapon.weapon.concealment | addSpaceToCapitalCharacters }}
+      </p>
     </div>
+  </div>
+  <br />
+  <button class="btn btn-primary" (click)="onBack()" style="width: 80px;">
+    <i class="fa fa-chevron-left"></i> Back
+  </button>
 </div>
-<br>
-<button class='btn btn-primary' (click)='onBack()' style='width:80px'>
-    <i class='fa fa-chevron-left'></i> Back
-</button>
