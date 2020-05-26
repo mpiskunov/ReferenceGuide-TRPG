@@ -1,0 +1,85 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-12">
+      <div class="card" *ngIf="armorVm">
+        <h5 class="card-header">{{ armorVm.armor.name }}</h5>
+        <div class="card-body">
+          <p class="card-text">
+            <i>"{{ armorVm.armor.description }}"</i>
+          </p>
+          <h1 class="border-bottom">General</h1>
+
+          <p>
+            <strong>Stopping Power: </strong>{{ armorVm.armor.stoppingPower }}
+          </p>
+          <p>
+            <strong>Reliability: </strong>{{ armorVm.armor.defaultReliability }}
+          </p>
+          <p><strong>Availability: </strong>{{ armorVm.armor.availability }}</p>
+          <p>
+            <strong>Enhancement Slots: </strong
+            >{{ armorVm.armor.enhancementSlots }}
+          </p>
+          <p>
+            <strong>Encumberance: </strong>{{ armorVm.armor.encumberanceValue }}
+          </p>
+
+          <p><strong>Weight: </strong>{{ armorVm.armor.weight }}</p>
+          <p>
+            <strong>Weight Classification: </strong
+            >{{ armorVm.armor.weightClassification }}
+          </p>
+          <p><strong>Cost: </strong>{{ armorVm.armor.cost }}</p>
+
+          <h1 class="border-bottom">Crafting</h1>
+          <div *ngIf="armorVm.craftingDiagram">
+            <br />
+            <h5>Diagram</h5>
+            <br />
+            <p>
+              <strong>Crafting DC:</strong>
+              {{ armorVm.craftingDiagram.craftingDC }}
+            </p>
+            <p>
+              <strong>Time:</strong>
+              {{ armorVm.craftingDiagram.time }}
+            </p>
+            <p>
+              <strong>Investment:</strong>
+              {{ armorVm.craftingDiagram.investment }} crowns
+            </p>
+            <p>
+              <strong>Cost:</strong>
+              {{ armorVm.craftingDiagram.cost }} crowns
+            </p>
+            <p>
+              <strong>Skill Level:</strong>
+              {{ armorVm.craftingDiagram.skillLevel }}
+            </p>
+          </div>
+          <br />
+          <div
+            *ngIf="
+              armorVm.craftingDiagramComponents &&
+              armorVm.craftingDiagramComponents.length > 0
+            "
+          >
+            <h5>Components</h5>
+            <br />
+            <ul *ngFor="let component of armorVm.craftingDiagramComponents">
+              <li>
+                {{ component.craftingComponent.name }} x {{ component.amount }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br />
+      <button class="btn btn-primary" (click)="onBack()" style="width: 80px;">
+        <i class="fa fa-chevron-left"></i> Back
+      </button>
+      <br />
+      <br />
+    </div>
+  </div>
+</div>

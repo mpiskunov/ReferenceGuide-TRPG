@@ -1,0 +1,37 @@
+<div class="container-fluid pb-5">
+  <div class="row">
+    <div class="col-md-12 col-lg-4 col-xl-3">
+      <div class="pt-5">
+        <div class="col-lg-6 col-sm-12 float-right">
+          <div class="list-group" id="myList" role="tablist">
+            <a
+              class="list-group-item list-group-item-action active"
+              data-toggle="list"
+              href="#armor"
+              role="tab"
+              >Armor</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              data-toggle="list"
+              href="#glyphs"
+              role="tab"
+              >Glyphs</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 pt-5">
+      <div class="tab-content">
+        <div class="tab-pane active" id="armor" role="tabpanel">
+          <app-armor-list></app-armor-list>
+        </div>
+        <div class="tab-pane" id="glyphs" role="tabpanel">
+          <app-glyphs-list></app-glyphs-list>
+        </div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

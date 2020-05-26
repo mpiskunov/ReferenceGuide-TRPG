@@ -1,11 +1,28 @@
-<div class="card" *ngIf='generalGear'>
-    <h5 class="card-header">{{generalGear.name}}</h5>
-    <div class="card-body">
-        <h5 class="card-title">{{generalGear.generalGearClassification | addSpaceToCapitalCharacters}}</h5>
-        <p class="card-text"><i>"{{generalGear.description}}"</i></p>
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card" *ngIf="generalGear">
+        <h5 class="card-header">{{ generalGear.name }}</h5>
+        <div class="card-body">
+          <h5 class="card-title">
+            {{
+              generalGear.generalGearClassification
+                | addSpaceToCapitalCharacters
+            }}
+          </h5>
+          <p class="card-text">
+            <i>"{{ generalGear.description }}"</i>
+          </p>
+          <p><strong>Cost: </strong>{{ generalGear.cost }}</p>
+          <p *ngIf="generalGear.weight">
+            <strong>Weight: </strong>{{ generalGear.weight }}
+          </p>
+        </div>
+      </div>
+      <br />
+      <button class="btn btn-primary" (click)="onBack()" style="width: 80px;">
+        <i class="fa fa-chevron-left"></i> Back
+      </button>
     </div>
+  </div>
 </div>
-<br>
-<button class='btn btn-primary' (click)='onBack()' style='width:80px'>
-    <i class='fa fa-chevron-left'></i> Back
-</button>

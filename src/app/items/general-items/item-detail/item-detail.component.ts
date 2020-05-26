@@ -7,40 +7,41 @@ import { GeneralGear } from 'src/app/shared/model/models';
 @Component({
   selector: 'app-item-detail',
   templateUrl: './item-detail.component.html',
-  styleUrls: ['./item-detail.component.css']
+  styleUrls: ['./item-detail.component.css'],
 })
 export class ItemDetailComponent implements OnInit {
-
   generalGear: GeneralGear;
   callBackUrl: string;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
-    private apiService: WitcherApiService) { 
-      let url = route.url.subscribe({
-        next: url => {
-          this.callBackUrl = url[0].path;
-        }
-      });
-    }
+    private apiService: WitcherApiService
+  ) {
+    let url = route.url.subscribe({
+      next: (url) => {
+        this.callBackUrl = url[0].path;
+      },
+    });
+  }
 
   ngOnInit(): void {
     const param = this.route.snapshot.paramMap.get('id');
-    if(param)
-    {
+    if (param) {
       const id = +param;
 
-      this.apiService.getSingularById<GeneralGear>(ApiEndPoint.GENERAL_GEAR, id).subscribe({
-        next: generalGear => {
-          this.generalGear = generalGear;
-        },
-        error: err => console.log(err)
-      });
+      this.apiService
+        .getSingularById<GeneralGear>(ApiEndPoint.GENERAL_GEAR, id)
+        .subscribe({
+          next: (generalGear) => {
+            this.generalGear = generalGear;
+          },
+          error: (err) => console.log(err),
+        });
     }
   }
 
   onBack(): void {
-    this.router.navigate(['/' + this.callBackUrl]);
+    this.router.navigate(['/' + 'GeneralGearDashboard']);
   }
-
 }

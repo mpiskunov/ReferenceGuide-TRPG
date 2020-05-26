@@ -79,7 +79,17 @@
         <thead>
           <tr>
             <th *ngFor="let header of filteredItemArray[0].columns">
-              {{ header.itemName | addSpaceToCapitalCharacters }}
+              <p
+                *ngIf="header.isSortable; else elseBlock"
+                (click)="columnSortClick($event, header.itemName)"
+              >
+                {{ header.itemName | addSpaceToCapitalCharacters }}
+              </p>
+              <ng-template #elseBlock
+                ><p>
+                  {{ header.itemName | addSpaceToCapitalCharacters }}
+                </p></ng-template
+              >
             </th>
           </tr>
         </thead>

@@ -21,11 +21,13 @@ export class TableBuilderComponent {
               itemValue: '',
               sortNumber: index,
               isHyperLink: false,
+              isSortable: false,
             };
             column.itemName = prop;
             column.itemValue = (item[prop] as unknown) as string;
             column.sortNumber = index++;
             if (prop === 'name') column.isHyperLink = true;
+            if (prop === 'weightClassification') column.isSortable = true;
             itemColumns.push(column);
           }
         }

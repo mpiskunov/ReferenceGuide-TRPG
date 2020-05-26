@@ -16,10 +16,16 @@ export class SelfPopulatingTableComponent implements OnInit {
   // Define the column's name index to sort alphabetically.
   indexOfName: number = -1;
 
+  indexOfSort: number = -1;
+  arrayOfUniqueSorts: Array<string>;
+
   numberOfPages: number = 0;
   activePage: number = 1;
   itemsPerPage: number = 10;
   sortAlphabetically: boolean = false;
+  sortByColumnTop: boolean = false;
+  sortByColumnBottom: boolean = false;
+  sortByColumnValue: string = '';
   @Input() callbackUrl: string;
 
   _listFilter = '';
@@ -52,6 +58,14 @@ export class SelfPopulatingTableComponent implements OnInit {
 
     // Set ID and Name indexes.
     this.setIndexesForIDAndName(this.itemArray[0]);
+
+    // // Returns unique array of Weight Classifications as of now.
+    // this.arrayOfUniqueSorts = [
+    //   ...new Set(
+    //     this.filteredItemArray.map((x) => x.columns[this.indexOfSort].itemValue)
+    //   ),
+    // ];
+
     this.refreshItemArray();
     // Refresh amount of viewable items.
     this.refreshViewableItems(this.activePage);
@@ -62,6 +76,11 @@ export class SelfPopulatingTableComponent implements OnInit {
     if (column.length > 0) this.indexOfID = +column[0].sortNumber;
     let columnName = record.columns.filter((a, b) => a.itemName === 'name');
     if (columnName.length > 0) this.indexOfName = +columnName[0].sortNumber;
+
+    let sortColumn = record.columns.filter(
+      (a, b) => a.itemName === 'weightClassification'
+    );
+    if (sortColumn.length > 0) this.indexOfSort = +sortColumn[0].sortNumber;
   };
 
   counter(i: number) {
@@ -76,6 +95,21 @@ export class SelfPopulatingTableComponent implements OnInit {
     if (paginationNumber == this.activePage) return;
 
     this.refreshViewableItems(paginationNumber);
+  }
+
+  columnSortClick(e, columnName) {
+    this.sortByColumnValue = columnName;
+
+    if (!this.sortByColumnTop && !this.sortByColumnBottom) {
+      this.sortByColumnTop = true;
+    } else if (this.sortByColumnTop && !this.sortByColumnBottom) {
+      this.sortByColumnBottom = true;
+      this.sortByColumnTop = false;
+    } else {
+      this.sortByColumnBottom = this.sortByColumnTop = false;
+    }
+    this.refreshItemArray();
+    this.refreshViewableItems(1);
   }
 
   refreshViewableItems = (newActivePage: number) => {
@@ -131,7 +165,35 @@ export class SelfPopulatingTableComponent implements OnInit {
     if (this.tableFilter) {
       this.filteredItemArray = this.performFilter(this.tableFilter);
     }
+
+    // Sort by column if true
+    // if (this.sortByColumnTop || this.sortByColumnBottom) {
+    //   this.filteredItemArray.sort((a, b) => {
+    //     // Weight Classifications
+    //     var wc1 = a.columns[this.indexOfSort].itemValue.toUpperCase();
+    //     var wc2 = b.columns[this.indexOfSort].itemValue.toUpperCase();
+    //     if (wc1 < wc2) {
+    //       return -1; //wc1 comes first
+    //     }
+    //     if (wc1 > wc2) {
+    //       return 1; // wc2 comes first
+    //     }
+    //     return 0; // names must be equal
+    //   });
+    // }
+
     if (this.sortAlphabetically) {
+      this.filteredItemArray.sort((a, b) => {
+        var wepName1 = a.columns[this.indexOfName].itemValue.toUpperCase();
+        var wepName2 = b.columns[this.indexOfName].itemValue.toUpperCase();
+        if (wepName1 < wepName2) {
+          return -1; //wepName1 comes first
+        }
+        if (wepName1 > wepName2) {
+          return 1; // wepName2 comes first
+        }
+        return 0; // names must be equal
+      });
       this.filteredItemArray.sort((a, b) => {
         var wepName1 = a.columns[this.indexOfName].itemValue.toUpperCase();
         var wepName2 = b.columns[this.indexOfName].itemValue.toUpperCase();

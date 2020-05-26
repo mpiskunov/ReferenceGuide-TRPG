@@ -20,7 +20,7 @@ export class ArmorListComponent extends TableBuilderComponent
     'name',
     'defaultReiability',
     'stoppingPower',
-    'availability',
+    'weightClassification',
     'weight',
     'cost',
   ];
@@ -33,7 +33,7 @@ export class ArmorListComponent extends TableBuilderComponent
     private router: Router
   ) {
     super();
-    this.callBackUrl = router.url;
+    this.callBackUrl = 'Armors';
   }
 
   ngOnInit(): void {

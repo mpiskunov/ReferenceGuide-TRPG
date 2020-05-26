@@ -79,7 +79,9 @@
           <ul
             *ngFor="let component of completedWeapon.craftingDiagramComponents"
           >
-            <li>{{ component.craftingComponent.name }} x {{component.amount}}</li>
+            <li>
+              {{ component.craftingComponent.name }} x {{ component.amount }}
+            </li>
           </ul>
         </div>
       </div>
@@ -89,4 +91,6 @@
   <button class="btn btn-primary" (click)="onBack()" style="width: 80px;">
     <i class="fa fa-chevron-left"></i> Back
   </button>
+  <br />
+  <br />
 </div>

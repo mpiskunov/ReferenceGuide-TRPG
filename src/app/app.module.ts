@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeaponsModule } from './weapons/weapons.module';
 import { ItemsModule } from './items/items.module';
-import { ArmorModule } from './armor/armor-list/armor.module';
+import { ArmorModule } from './armor/armor.module';
 import { MonstersModule } from './monsters/monsters.module';
 import { RunesListComponent } from './weapons/runes-list/runes-list.component';
 

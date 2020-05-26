@@ -1,0 +1,29 @@
+<div class="container pt-5" *ngIf="glyph">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div class="card">
+        <h5 class="card-header">{{ glyph.name }}</h5>
+        <div class="card-body">
+          <p class="card-text">
+            <strong>Effect: </strong>
+            {{ glyph.effect }}
+          </p>
+          <p class="card-text">
+            <strong>Cost: </strong>
+            {{ glyph.cost }}
+          </p>
+          <p class="card-text">
+            <strong>Weight: </strong>
+            {{ glyph.weight }}
+          </p>
+        </div>
+      </div>
+      <br />
+      <button class="btn btn-primary" (click)="onBack()" style="width: 80px;">
+        <i class="fa fa-chevron-left"></i> Back
+      </button>
+      <br />
+      <br />
+    </div>
+  </div>
+</div>

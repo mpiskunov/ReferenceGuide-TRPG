@@ -2,6 +2,7 @@ export enum ApiEndPoint {
   WEAPONS = 'Weapons',
   WEAPONS_COMPLETE = 'CompletedWeapons',
   ARMORS = 'Armors',
+  ARMORS_COMPLETE = 'CompletedArmors',
   GENERAL_GEAR = 'GeneralGears',
   BOMBS = 'Bombs',
   BOMBS_COMPLETE = 'CompletedBombs',
@@ -12,4 +13,5 @@ export enum ApiEndPoint {
   RUNES = 'Runes',
   MONSTERS = 'Monsters',
   MONSTERS_COMPLETE = 'CompletedMonsters',
+  GLYPHS = 'Glyphs',
 }

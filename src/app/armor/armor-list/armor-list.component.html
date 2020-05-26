@@ -1,5 +1,5 @@
-<p>armor-list works!</p>
-<p>does it really?</p> 
-<self-populating-table *ngIf='itemsForGenTable && itemsForGenTable.length' [itemArray]='itemsForGenTable' [callbackUrl]='callBackUrl' ></self-populating-table>
-
-
+<self-populating-table
+  *ngIf="itemsForGenTable && itemsForGenTable.length"
+  [itemArray]="itemsForGenTable"
+  [callbackUrl]="callBackUrl"
+></self-populating-table>
