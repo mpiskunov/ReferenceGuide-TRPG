@@ -42,16 +42,16 @@ ul,
 @media (min-width: 1200px) {
 }
 
-:host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
+/* :host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
   #self-gen-header {
   background-color: rgba(255, 0, 0, 0.658);
-}
+} */
 
 :host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
   .page-item.active
   .page-link {
-  background-color: rgb(201, 201, 201);
-  border-color: rgb(201, 201, 201);
+  background-color: rgb(255, 37, 37);
+  border-color: rgb(255, 62, 62);
 }
 
 :host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
@@ -61,5 +61,35 @@ ul,
 
 :host-context(app-weapon-list, app-bomb-list, app-trap-list, app-ammunition-list, app-runes-list)
   .card {
+  border-color: black;
+}
+
+:host-context(app-general-items-list, app-containers-list, app-foodanddrink-list, app-clothing-list, app-services-list, app-lodging-list)
+  .page-item.active
+  .page-link {
+  background-color: rgb(9, 226, 82);
+  border-color: rgb(31, 201, 87);
+}
+
+:host-context(app-general-items-list, app-containers-list, app-foodanddrink-list, app-clothing-list, app-services-list, app-lodging-list)
+  a {
+  color: rgb(19, 153, 64);
+}
+
+:host-context(app-general-items-list, app-containers-list, app-foodanddrink-list, app-clothing-list, app-services-list, app-lodging-list)
+  .card {
+  border-color: black;
+}
+
+:host-context(app-monsters) .page-item.active .page-link {
+  background-color: rgba(177, 10, 177, 0.514);
+  border-color: rgba(0, 0, 0, 0.514);
+}
+
+:host-context(app-monsters) a {
+  color: rgba(177, 10, 177, 0.726);
+}
+
+:host-context(app-monsters) .card {
   border-color: black;
 }

@@ -1,0 +1,12 @@
+.header {
+  margin-bottom: initial;
+  border-bottom-style: hidden;
+
+  background-color: rgba(177, 10, 177, 0.514);
+}
+
+.btn-primary {
+  background-color: rgba(177, 10, 177, 0.514);
+  border-color: rgba(0, 0, 0, 0.514);
+  color: black;
+}

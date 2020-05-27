@@ -1,10 +1,10 @@
 .btn.btn-primary {
-  background-color: rgba(255, 0, 0, 0.75);
+  background-color: rgba(235, 33, 33, 0.75);
   border-color: rgba(117, 0, 0, 0.75);
 }
 
 .btn.btn-primary:hover {
-  background-color: rgba(117, 0, 0, 0.75);
+  background-color: rgba(170, 39, 39, 0.75);
 }
 
 .card-header {

@@ -21,7 +21,11 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+        >
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -30,7 +34,11 @@
             >Home</a
           >
         </li>
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+        >
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -38,7 +46,11 @@
             >Weapons</a
           >
         </li>
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+        >
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -46,7 +58,11 @@
             >Armors</a
           >
         </li>
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+        >
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -55,7 +71,11 @@
           >
         </li>
 
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+        >
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -66,88 +86,5 @@
       </ul>
     </div>
   </nav>
-  <!-- <nav
-    class="navbar navbar-expand-sm navbar-dark bg-dark flex-nowrap top-navbar"
-  >
-    <button
-      class="navbar-toggler mr-2"
-      type="button"
-      data-toggle="collapse"
-      data-target="#TopNavBar"
-      aria-controls="TopNavBar"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <span class="navbar-brand w-100"
-      ><a
-        class="nav-link"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        [routerLink]="['/']"
-        >{{ title }}</a
-      ></span
-    >
-    <div
-      class="navbar-collapse collapse w-100 justify-content-center"
-      id="TopNavBar"
-    >
-      <div class="row">
-        <ul class="navbar-nav mx-auto top-nav-list">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="['/']"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/WeaponDashboard']"
-              >Weapons</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/Armors']"
-              >Armors</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/GeneralGears']"
-              >Gear</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/FoodAndDrink']"
-              >Food & Drink</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/Monsters']"
-              >Monstahs Kehd</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="w-100"></div>
-  </nav> -->
   <router-outlet></router-outlet>
 </div>

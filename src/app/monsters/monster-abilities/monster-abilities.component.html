@@ -1,0 +1,24 @@
+<div *ngIf="abilities && abilities.length" class="text-center">
+  <table class="table table-striped table-bordered table-sm header">
+    <tbody>
+      <tr>
+        <th>
+          <h4>Abilities</h4>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered table-sm table-hover">
+    <thead></thead>
+    <tbody>
+      <tr></tr>
+      <tr *ngFor="let ab of abilities">
+        <td>
+          <strong>{{ ab.title }}</strong>
+          <div *ngIf="ab.description">{{ ab.description }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

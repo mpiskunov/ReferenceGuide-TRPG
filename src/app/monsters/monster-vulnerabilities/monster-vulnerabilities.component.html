@@ -1,0 +1,24 @@
+<div *ngIf="monsterVulns" class="text-center">
+  <table class="table table-striped table-bordered table-sm header">
+    <tbody>
+      <tr>
+        <th>
+          <h4>Vulnerabilities</h4>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered table-sm table-hover">
+    <thead></thead>
+    <tbody>
+      <tr></tr>
+      <tr *ngFor="let vul of monsterVulns">
+        <td>
+          <strong>{{ vul.title }}</strong>
+          <div *ngIf="vul.description">{{ vul.description }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

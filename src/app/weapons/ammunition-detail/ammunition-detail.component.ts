@@ -28,7 +28,7 @@ export class AmmunitionDetailComponent implements OnInit {
         .getSingularById<AmmunitionViewModel>(ApiEndPoint.AMMO_COMPLETE, id)
         .subscribe({
           next: (ammo) => {
-            debugger;
+            // ;
             this.ammoVM = ammo;
           },
           error: (err) => console.log(err),

@@ -1,0 +1,26 @@
+<div *ngIf="derivedStats" class="text-center">
+  <table class="table table-striped table-bordered table-sm header">
+    <tbody>
+      <tr>
+        <th>
+          <h4>Derived Stats</h4>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered table-sm table-hover">
+    <thead></thead>
+    <tbody>
+      <tr></tr>
+      <tr *ngFor="let stat of derivedStats">
+        <td>
+          <strong>{{
+            stat.derivedStatistic.derivedStatisticCategory | uppercase
+          }}</strong>
+        </td>
+        <td>{{ stat.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

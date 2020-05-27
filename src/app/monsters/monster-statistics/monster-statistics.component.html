@@ -1,0 +1,24 @@
+<div *ngIf="monStats" class="text-center">
+  <table class="table table-striped table-bordered table-sm header">
+    <tbody>
+      <tr>
+        <th>
+          <h4>Stats</h4>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered table-sm table-hover">
+    <thead></thead>
+    <tbody>
+      <tr></tr>
+      <tr *ngFor="let stat of monStats">
+        <td>
+          <strong>{{ stat.statistic.statisticCategory | uppercase }}</strong>
+        </td>
+        <td>{{ stat.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

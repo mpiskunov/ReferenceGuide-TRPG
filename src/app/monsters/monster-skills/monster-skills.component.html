@@ -1,0 +1,28 @@
+<div *ngIf="monSkills && monStats && skillBaseArray" class="text-center">
+  <table class="table table-striped table-bordered table-sm header">
+    <tbody>
+      <tr>
+        <th>
+          <h4>Skills</h4>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Level</th>
+        <th>Base</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let skill of monSkills; let i = index">
+        <td>{{ skill.skill.name }}</td>
+        <td>{{ skill.value }}</td>
+        <td>{{ skill.value + skillBaseArray[i] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

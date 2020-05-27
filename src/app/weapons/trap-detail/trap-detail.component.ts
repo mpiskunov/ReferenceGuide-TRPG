@@ -28,7 +28,7 @@ export class TrapDetailComponent implements OnInit {
         .getSingularById<TrapViewModel>(ApiEndPoint.TRAPS_COMPLETE, id)
         .subscribe({
           next: (trap) => {
-            debugger;
+            // ;
             this.trapVM = trap;
           },
           error: (err) => console.log(err),

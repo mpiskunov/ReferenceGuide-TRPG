@@ -13,13 +13,15 @@ export class MonsterDetailComponent implements OnInit {
   monsterViewModel: MonsterViewModel;
   callBackUrl: string;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
-    private apiService: WitcherApiService) {
+    private apiService: WitcherApiService
+  ) {
     let url = route.url.subscribe({
-      next: url => {
+      next: (url) => {
         this.callBackUrl = url[0].path;
-      }
+      },
     });
   }
 
@@ -28,16 +30,18 @@ export class MonsterDetailComponent implements OnInit {
     if (param) {
       const id = +param;
 
-      this.apiService.getSingularById<MonsterViewModel>(ApiEndPoint.MONSTERS_COMPLETE, id).subscribe({
-        next: monsterComplete => {
-          this.monsterViewModel = monsterComplete;
-        },
-        error: err => console.log(err)
-      });
+      this.apiService
+        .getSingularById<MonsterViewModel>(ApiEndPoint.MONSTERS_COMPLETE, id)
+        .subscribe({
+          next: (monsterComplete) => {
+            this.monsterViewModel = monsterComplete;
+          },
+          error: (err) => console.log(err),
+        });
     }
   }
 
   onBack(): void {
-    this.router.navigate(['/' + this.callBackUrl]);
+    this.router.navigate(['/' + 'Monsters']);
   }
 }

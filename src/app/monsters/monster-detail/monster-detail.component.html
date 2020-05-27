@@ -1,1 +1,136 @@
-<p>Monsters work just gotta make the page look bomb</p>
+<div class="container pt-5" *ngIf="monsterViewModel">
+  <div class="row border-bottom">
+    <div class="col">
+      <h1>{{ monsterViewModel.monster.name }}</h1>
+    </div>
+    <div class="col align-self-end">
+      <button
+        class="btn btn-primary float-right"
+        (click)="onBack()"
+        style="width: 80px; margin-bottom: 25px;"
+      >
+        <i class="fa fa-chevron-right"></i> Back
+      </button>
+      <br />
+    </div>
+  </div>
+
+  <div class="row pt-3">
+    <!-- First Column -->
+    <div class="col-12 col-md-6">
+      <div class="row">
+        <div class="col-12">
+          <app-monster-skills
+            [monSkills]="monsterViewModel.monsterSkills"
+            [monStats]="monsterViewModel.monsterStatistics"
+          >
+          </app-monster-skills>
+        </div>
+        <div class="col-12">
+          <app-monster-weapons
+            [monsterWeapons]="monsterViewModel.monsterWeapons"
+          ></app-monster-weapons>
+        </div>
+        <div class="col-6">
+          <app-monster-derived-statistics
+            [derivedStats]="monsterViewModel.monsterDerivedStatistics"
+          >
+          </app-monster-derived-statistics>
+        </div>
+        <div class="col-6">
+          <app-monster-statistics
+            [monStats]="monsterViewModel.monsterStatistics"
+          ></app-monster-statistics>
+        </div>
+      </div>
+    </div>
+    <!-- Second Column -->
+    <div class="col-12 col-md-6">
+      <div class="row">
+        <div class="col-12">
+          <app-monster-vulnerabilities
+            [monsterVulns]="monsterViewModel.monsterVulnerabilities"
+          ></app-monster-vulnerabilities>
+        </div>
+        <div class="col-12">
+          <app-monster-abilities
+            [abilities]="monsterViewModel.monsterAbilities"
+          ></app-monster-abilities>
+        </div>
+        <div class="col-12">
+          <div class="row justify-content-center text-center">
+            <div class="col-4">
+              <table class="table table-striped table-bordered table-sm header">
+                <tbody>
+                  <tr>
+                    <th>Armor</th>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                class="table table-striped table-bordered table-sm table-hover"
+              >
+                <tbody>
+                  <tr></tr>
+                  <tr>
+                    <td>{{ monsterViewModel.monster.armorValue }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-4">
+              <table class="table table-striped table-bordered table-sm header">
+                <tbody>
+                  <tr>
+                    <th>Bounty</th>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                class="table table-striped table-bordered table-sm table-hover"
+              >
+                <tbody>
+                  <tr></tr>
+                  <tr>
+                    <td>{{ monsterViewModel.monster.bounty }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-4">
+              <table class="table table-striped table-bordered table-sm header">
+                <tbody>
+                  <tr>
+                    <th>Threat</th>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                class="table table-striped table-bordered table-sm table-hover"
+              >
+                <tbody>
+                  <tr></tr>
+                  <tr>
+                    <td>{{ monsterViewModel.monster.threat }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <app-monster-loots
+            [monLoots]="monsterViewModel.monsterLoots"
+          ></app-monster-loots>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <app-monster-informations
+        [monInfos]="monsterViewModel.monsterInformations"
+      ></app-monster-informations>
+    </div>
+  </div>
+</div>

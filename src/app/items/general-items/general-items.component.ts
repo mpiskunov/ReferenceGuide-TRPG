@@ -30,7 +30,7 @@ export class GeneralItemsComponent extends TableBuilderComponent
 
     let url = route.url.subscribe({
       next: (url) => {
-        //debugger;
+        //// ;
         this.callBackUrl = 'GeneralGears';
       },
     });

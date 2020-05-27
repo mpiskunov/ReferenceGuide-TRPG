@@ -26,7 +26,7 @@ export class RuneDetailComponent implements OnInit {
 
       this.apiService.getSingularById<Rune>(ApiEndPoint.RUNES, id).subscribe({
         next: (rune) => {
-          debugger;
+          // ;
           this.rune = rune;
         },
         error: (err) => console.log(err),

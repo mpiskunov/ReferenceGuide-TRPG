@@ -14,12 +14,12 @@ export class WitcherApiService {
   // Gets all weapons
   getAll<T>(endPoint: ApiEndPoint): Observable<T> {
     return this.http.get<T>(`${this.url.API_ENDPOINT}/${endPoint}`).pipe(
-      tap((data) =>
-        console.log(
-          'All: '
-          //+ JSON.stringify(data)
-        )
-      ),
+      tap((data) => {
+        // console.log(
+        //   'All: '
+        //   //+ JSON.stringify(data)
+        // )
+      }),
       catchError(this.handleError)
     );
   }
@@ -27,7 +27,9 @@ export class WitcherApiService {
   // Gets all weapons
   getSingularById<T>(endPoint: ApiEndPoint, id: number): Observable<T> {
     return this.http.get<T>(`${this.url.API_ENDPOINT}/${endPoint}/${id}`).pipe(
-      tap((data) => console.log('All: ' + JSON.stringify(data))),
+      tap((data) => {
+        //console.log('All: ' + JSON.stringify(data));
+      }),
       catchError(this.handleError)
     );
   }

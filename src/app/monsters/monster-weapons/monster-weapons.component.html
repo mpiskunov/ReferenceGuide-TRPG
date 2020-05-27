@@ -1,0 +1,28 @@
+<div *ngIf="monsterWeapons" class="text-center">
+  <table class="table table-striped table-bordered table-sm header">
+    <tbody>
+      <tr>
+        <th><h4>Weapons</h4></th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>DMG</th>
+        <th>Effect</th>
+        <th>ROF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let wep of monsterWeapons">
+        <td>{{ wep.name }}</td>
+        <td>{{ wep.damage }}</td>
+        <td>{{ wep.effect }}</td>
+        <td>{{ wep.rateOfFire }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

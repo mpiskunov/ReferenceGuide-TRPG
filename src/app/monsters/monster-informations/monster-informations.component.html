@@ -1,0 +1,24 @@
+<div *ngIf="monInfos && monInfos.length" class="text-center">
+  <table class="table table-striped table-bordered table-sm header">
+    <tbody>
+      <tr>
+        <th>
+          <h4>Information</h4>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead></thead>
+    <tbody>
+      <tr></tr>
+      <tr *ngFor="let info of monInfos">
+        <td>
+          <strong>{{ info.title }}</strong>
+          <div *ngIf="info.description">{{ info.description }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
