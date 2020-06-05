@@ -9,7 +9,7 @@
             | addSpaceToCapitalCharacters
         }}
       </h5>
-      <p class="card-text">
+      <p *ngIf="completedWeapon.weapon.description" class="card-text">
         <i>"{{ completedWeapon.weapon.description }}"</i>
       </p>
       <p><strong>Damage: </strong>{{ completedWeapon.weapon.damage }}</p>
@@ -33,6 +33,10 @@
       <p>
         <strong>Concealment: </strong
         >{{ completedWeapon.weapon.concealment | addSpaceToCapitalCharacters }}
+      </p>
+      <p>
+        <strong> Enhancement Slots: </strong
+        >{{ completedWeapon.weapon.enhancements }}
       </p>
       <br />
       <div

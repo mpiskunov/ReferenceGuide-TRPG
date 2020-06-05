@@ -39,10 +39,19 @@ export class GeneralItemsComponent extends TableBuilderComponent
   ngOnInit(): void {
     this.apiService.getAll<GeneralGear[]>(this.apiEndpoint).subscribe({
       next: (gears) => {
-        this.generalGearList = gears.filter(
-          (gear) =>
-            gear.generalGearClassification == this.generalGearClassification
-        );
+        if (this.generalGearClassification == 'GeneralGear') {
+          this.generalGearList = gears.filter(
+            (gear) =>
+              gear.generalGearClassification ==
+                this.generalGearClassification ||
+              gear.generalGearClassification == 'WitcherGear'
+          );
+        } else {
+          this.generalGearList = gears.filter(
+            (gear) =>
+              gear.generalGearClassification == this.generalGearClassification
+          );
+        }
 
         if (!this.displayWeight) {
           const index = this.columnsToDisplay.indexOf('weight');
